@@ -1,0 +1,14 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Name="Test" Version="1.2.3.4" UpgradeCode="FA6768C3-9010-4B20-B03F-F3FC751F3A26" Manufacturer="Test">
+		<Media Id="1" Cabinet="data.cab" EmbedCab="yes" />
+		
+		<Feature Id="VCRedist2017Feature" Title="Visual C++ 14.0 (2015, 2017, 2019) Runtime" Level="1" AllowAdvertise="no" Description="Supporting Libraries for Helix.">
+			<MergeRef Id="VCRedist2017" />
+		</Feature>
+
+		<DirectoryRef Id="TARGETDIR">
+			<Merge Id="VCRedist2017" SourceFile="Redists\Microsoft_VC140_CRT_x86.msm" DiskId="1" Language="0" />
+		</DirectoryRef>
+
+	</Package>
+</Wix>
